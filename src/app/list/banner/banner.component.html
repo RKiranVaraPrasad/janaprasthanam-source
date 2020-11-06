@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="item_detail mt-4" *ngIf="item">
+                <h1>{{item.Title}}</h1>
+                <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="" style="max-width: 600px; margin: 10px 0 20px;">
+                <p>{{item.Description}}</p>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

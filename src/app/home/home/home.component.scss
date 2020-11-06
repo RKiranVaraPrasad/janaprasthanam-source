@@ -1,0 +1,130 @@
+.carousel-caption{
+    width: 100%;
+    background: #000000b5;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.andhra_telangana{
+    .item {
+        position: relative;    
+        line-height: 24px;
+        padding-bottom: 5px;
+        min-height: 55px;
+        cursor: pointer;
+        &:hover{
+            color: red;
+        }
+    }
+    .post-content {
+        padding: 5px 10px;
+        // position: absolute;
+        bottom: 0;
+        z-index: 99;
+        background-color: #525252;
+        font-size: 15px;
+        width: 100%;
+        color: white;
+        min-height: 55px;
+        .date_time{
+            bottom: 10px;
+        }
+    }
+    .bottom-bordered{
+        .item{
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            &:last-child{ border-bottom: 0;}
+        }
+    }
+}
+
+.side-items{
+    .item {
+        position: relative;    
+        line-height: 24px;
+        padding-bottom: 5px;
+        min-height: 55px;
+        cursor: pointer;
+        &:hover{
+            color: red;
+        }
+    }
+}
+.breaking-title {
+    background: #393185;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.highlight-news-wrapper{
+    h2{ color: black;}
+    padding: 15px;
+    background: #f7f7fa;
+    .highlight-news-item {
+        width: 25%;
+        display: inline-block;
+        padding-right: 10px;
+        img {
+            width: 100%;
+        }
+    }
+}
+.carousel-multi-item{
+    .controls-top {
+        .btn-floating{
+            display: inline;
+        }
+    }
+    .card{
+        border-radius: 0;
+        border: 0;
+        .card-img, .card-img-top{
+            border-radius: 0;
+            height: 130px;
+        }
+    }
+}
+.national{
+    .item{
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:first-child{
+            img{ width: 100%; display: block;}
+        }
+        &:last-child{
+            border-bottom: 0px;
+        }
+        &:hover{
+            color: red;
+        }
+        img{ display: none;}
+        .date{ display: none;}
+    }
+}
+.breaking-news{
+    cursor: pointer;
+    &:hover{
+        color: red;
+    }
+}
+#carouselExampleCaptions{
+    .carousel-inner {
+        height: 312px;
+        border: 1px solid rgba(0, 0, 0, 0.17);
+        .carousel-item{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}
+.grid-view{
+    margin: 0 auto 10px;
+    display: table;
+}

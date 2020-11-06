@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <div class="item_list mt-4">
+                <h1> {{title}} </h1>
+                <div class="list-view-container mt-4">
+                    <div class="list-view" *ngFor="let item of listItems" routerLink="/detail/{{item.ID}}">
+                        {{item.Title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 pl-0">
+            <div class="breaking_items mt-4">
+                <div class="breaking_title">
+                    <div class="row">
+                        <div class="col">
+                            <h2>తాజావార్తలు</h2>
+                        </div>
+                        <div class="col-auto">
+                            <div class="more" routerLink="/list">
+                                మరిన్ని...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" *ngFor="let item of latestNewsLeft"
+                    routerLink="/detail/{{item.ID}}">
+                    <div class="row">
+                        <div class="col-auto">
+                            <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="">
+                        </div>
+                        <div class="col pl-0">
+                            <span>{{item.Title}}</span>
+                            <span class="date">{{item.publishDate | date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="epaper mt-4">
+                <h2>E-Paper</h2>
+                <a class="grid-view" *ngFor="let item of ePaperItems; let i = index" href="http://nodeappshop.club/pdf/{{item.epFile}}" target="_blank" [style.display]="i === 0 ? 'block' : 'none'">
+                    <span class="title">{{item.papaerDate}}</span>
+                    </a>
+            </section>
+            <section class="side-items mt-4">
+                <h2>క్రీడలు</h2>
+                <div class="item-wrapper">
+                    <div class="item" *ngFor="let item of sportNews" routerLink="/detail/{{item.ID}}">
+                        {{item.Title}}
+                    </div>
+                </div>
+                <div class="more" routerLink="/list/34">
+                    మరిన్ని...
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

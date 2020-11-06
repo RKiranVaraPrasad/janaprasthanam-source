@@ -1,0 +1,68 @@
+<section class="py-1 border-bottom" style="background-color: #000;">
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-auto social-media">
+                <span style="font-weight: bold; text-transform: uppercase; font-size: 14px; color: white;">Follow Us</span>
+                <a href="#"><img src="assets/svg/facebook.svg" alt=""></a>
+                <a href="#"><img src="assets/svg/twitter.svg" alt=""></a>
+                <a href="#"><img src="assets/svg/youtube.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</section>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar p-0">
+                    <a class="navbar-brand">
+                        <img src="assets/logo.png" alt="" style="max-width: 340px;
+                        background: white; padding-right: 3px;">
+                    </a>
+                    <!-- <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<nav style="background-color: #e31e24; margin-top: 1px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <object type="image/svg+xml" data="assets/svg/home.svg" class="icon icon-home">
+                                        Home
+                                      </object>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    వార్తలు
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </li> -->
+                            <li class="nav-item" *ngFor="let menu of menuList">
+                                <a class="nav-link" href="#" routerLink="/list/{{menu.Category_ID}}" routerLinkActive="active">{{menu.Category_Name}}</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#" routerLink="/ePaper/" routerLinkActive="active">E-Paper</a>
+                              </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>

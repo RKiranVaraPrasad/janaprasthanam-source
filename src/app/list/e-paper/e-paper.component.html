@@ -1,0 +1,30 @@
+<!-- <div class="container" *ngIf="breakingNewItem">
+    <div class="row">
+        <div class="col-8">
+            <div class="item_detail mt-4">
+                <h1>{{breakingNewItem.Title}}</h1>
+                <img src="http://nodeappshop.club/uploads/{{breakingNewItem.Image}}" alt="" style="max-width: 600px; margin: 10px 0 20px;">
+                <p>{{breakingNewItem.Description}}</p>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="item_list mt-4">
+                <h1> E Paper </h1>
+                <div class="list-view-container mt-4">
+                    <a class="grid-view" *ngFor="let item of ePaperItems" href="http://nodeappshop.club/pdf/{{item.epFile}}" target="_blank">
+                    <span class="title">{{item.papaerDate}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 pl-0">
+            
+        </div>
+    </div>
+</div>

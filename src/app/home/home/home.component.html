@@ -1,0 +1,290 @@
+<div class="container mt-2">
+    <div class="border" style="height: 55px; overflow: hidden;">
+        <div class="row">
+            <div class="col-auto">
+                <div class="breaking-title">
+                    బ్రేకింగ్ న్యూస్
+                </div>
+            </div>
+            <div class="col pl-0">
+                <span class="breaking-news" *ngFor="let breaking of breakingNews" routerLink="/breakingNews/{{breaking.ID}}"> <b>{{breaking.Title}}</b><br> {{breaking.Description}} </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-2">
+    <section class="slider mb-3">
+        <div class="row">
+            <div class="col-3 pr-0">
+                <section class="breaking_news">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breaking_items">
+                                <div class="breaking_title">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h2>తాజావార్తలు</h2>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="more" routerLink="/list">
+                                                మరిన్ని...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item" *ngFor="let item of latestNewsLeft"
+                                    routerLink="/detail/{{item.ID}}">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="">
+                                        </div>
+                                        <div class="col pl-0">
+                                            <span>{{item.Title}}</span>
+                                            <span class="date">{{item.publishDate | date}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-6">
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <!-- <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    </ol> -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item" [ngClass]="{'active': i == 1 }" *ngFor="let item of bannerNews; let i = index" routerLink="/banner/{{item.ID}}">
+                            <img src="http://nodeappshop.club/uploads/{{item.Image}}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{item.Title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-3 pl-0">
+                <section class="breaking_news">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breaking_items">
+                                <div class="breaking_title">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h2>తాజావార్తలు</h2>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="more">
+                                                మరిన్ని...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item" *ngFor="let item of latestNewsRight"
+                                    routerLink="/detail/{{item.ID}}">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="">
+                                        </div>
+                                        <div class="col pl-0">
+                                            <span>{{item.Title}}</span>
+                                            <span class="date">{{item.publishDate | date}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="andhra_telangana">
+                <section class="andhra_news">
+                    <h2>ఆంధ్రప్రదేశ్</h2>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="item" *ngFor="let item of andhraNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i===0? 'block' : 'none'"> 
+                                <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="" width="100%">
+                                <div class="post-content">
+                                    {{item.Title}}
+                                    <!-- <div class="date_time">
+                                        August 15 , 2020
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7 bottom-bordered">
+                            <div class="item" *ngFor="let item of andhraNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i > 0 && i < 5? 'block' : 'none'">
+                                {{item.Title}}
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="item" *ngFor="let item of andhraNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i === 5? 'block' : 'none'">
+                                {{item.Title}}
+                                <!-- <div class="date_time">
+                                    August 15 , 2020
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more" routerLink="/list/31">
+                        మరిన్ని...
+                    </div>
+                </section>
+                <hr />
+                <section class="andhra_news">
+                    <h2>తెలంగాణ</h2>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="item" *ngFor="let item of telanganaNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i===0? 'block' : 'none'">
+                                <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="" width="100%">
+                                <div class="post-content">
+                                    {{item.Title}}
+                                    <!-- <div class="date_time">
+                                        August 15 , 2020
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7 bottom-bordered">
+                            <div class="item" *ngFor="let item of telanganaNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i > 0 && i < 5? 'block' : 'none'">
+                                {{item.Title}}
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="item" *ngFor="let item of telanganaNews; let i=index" routerLink="/detail/{{item.ID}}" [style.display]="i === 5? 'block' : 'none'">
+                                {{item.Title}}
+                                <!-- <div class="date_time">
+                                    August 15 , 2020
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more" routerLink="/list/32">
+                        మరిన్ని...
+                    </div>
+                </section>
+            </div>
+            <!-- <div class="gallery mt-3">
+                <h2>Gallery</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                            <div class="controls-top">
+                                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
+                                        class="fa fa-chevron-left"></i></a>
+                                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+                                        class="fa fa-chevron-right"></i></a>
+                            </div>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/01.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 clearfix d-none d-md-block">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/02.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 clearfix d-none d-md-block">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/03.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/02.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 clearfix d-none d-md-block">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/03.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 clearfix d-none d-md-block">
+                                            <div class="card mb-2">
+                                                <img class="card-img-top" src="assets/gallery/01.jpg"
+                                                    alt="Card image cap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="col-3">
+            <h2>జాతీయం</h2>
+            <section class="national">
+                <div class="item" *ngFor="let item of nationalNews" routerLink="/detail/{{item.ID}}">
+                    <img src="http://nodeappshop.club/uploads/{{item.Image}}" alt="">
+                    {{item.Title}}
+                    <!-- <span class="date">{{item.publishDate | date}}</span> -->
+                </div>
+            </section>
+        </div>
+        <div class="col-3 pl-0">
+            <section class="epaper">
+                <h2>E-Paper</h2>
+                <!-- <img src="assets/epaper/01.jpg" alt="" style="margin-bottom: 10px; width: 100%;"> -->
+                <a class="grid-view" *ngFor="let item of ePaperItems; let i = index" href="http://nodeappshop.club/pdf/{{item.epFile}}" target="_blank" [style.display]="i === 0 ? 'block' : 'none'">
+                    <span class="title">{{item.papaerDate}}</span>
+                    </a>
+            </section>
+            <section class="side-items mt-4">
+                <h2>క్రీడలు</h2>
+                <div class="item-wrapper">
+                    <div class="item" *ngFor="let item of sportNews" routerLink="/detail/{{item.ID}}">
+                        {{item.Title}}
+                    </div>
+                </div>
+                <div class="more" routerLink="/list/34">
+                    మరిన్ని...
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="highlight-news-wrapper">
+                <h2>Videos</h2>
+                <div class="highlight-news-item" *ngFor="let item of YoutubeArray, let i = index" [style.display]="i <= 3 ? 'inline-block' : 'none'">
+                    <iframe width="266" height="140" [src]="sanitizer.bypassSecurityTrustResourceUrl(item.YoutubeLink)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

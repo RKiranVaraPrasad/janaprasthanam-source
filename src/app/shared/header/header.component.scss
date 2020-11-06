@@ -1,0 +1,44 @@
+header{ }
+.navbar-brand{
+    font-weight: 600;
+    color: white;
+}
+.nav-item {
+    &:hover{
+        background-color: #393185;
+        .nav-link{
+            color: white;
+        }
+    }
+    .nav-link{
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &.active{
+            background-color: #393185;
+            .nav-link{
+                color: white;
+            }
+        }
+    }
+}
+.social-media, .nav-link{
+    img{
+        display: inline-block;
+        width: 22px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
+.nav-link{
+    .icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+        filter: brightness(0) invert(1);
+        cursor: pointer;
+      }
+}
